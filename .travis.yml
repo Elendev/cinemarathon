@@ -4,10 +4,18 @@ node_js: 8
 
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 
 install:
-  - npm install
+- npm install
 
 script:
-  - npm run build
+- npm run build
+
+deploy:
+  provider: firebase
+  token:
+    secure: r/emt2+1gTx/sjD/Ykmfl+E/MoNnb2uoDNQAQXz3fF/Kz8IdtlB2NROGx+pNGGI2HW4ea1h7l3f9eqypvUpHnAe9Nx+zQUJOqVdAyrw9gTNUeVR+NoU8LIoG+nUJ7gng9+jg46UvEvOChSnQiPuMUzpdIGc4feZNTDFMRo3KVnT9FxWG5gkG/BxzJlpjNKEkpwZoaDJHfjBLV4qY5TyPaQXu5fAJtu8PfwHUtHmYVyufZPqcWvNqSavZHIhtvZkaPDyxZ8J2Dxeqg+6lj9E1QzRnTgdczjzuf+PFYPHIDzA464SLv4rc7UUwjuuE/wRi3X7X1mMFPY2H3Yczy8RaF5fOca0QPfeXmupJT5Io/HZJi4U9XwZ8xl0PTY1lYDvu1r1b28vKan+2AC2xTjWZJU4Ds0Rn8/Ve+TCnC3LE4VJKa+nMwz3J5KY1W9oIRMjq4tzknKVtmhIirMsyZ9DXhXEJSHRcPi5fC20NPB4akdPbAno6ovEk2X9eZ6QFR5lv0s1gkcPg1vgB9APBw43HtsuK9EnjJtsTffjdnMg8k0bhcLUh6YwB9fBjoJdCV5eAhTLZDrqZcPU3bSAG1/1KAy5rbZKGUgJi3clDjc9ZrWocjE8ZQWPjR2fJJH1GS+89avRH5W4PdrK71Iz7U2uvURMYNZ2iNEBmOX0vztACnAs=
+  skip_cleanup: true
+  on:
+    - branch: master
