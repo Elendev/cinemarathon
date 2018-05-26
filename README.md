@@ -1,5 +1,7 @@
 # Cinemarathon.ch
 
+[![Build Status](https://travis-ci.org/Elendev/cinemarathon.svg?branch=master)](https://travis-ci.org/Elendev/cinemarathon)
+
 This repository contains the code used in the website [cinemarathon.ch](https://www.cinemarathon.ch).
 
 For now it's only a draft, but it will soon have more information in it.
