@@ -1,6 +1,9 @@
 {
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "quotemark": [false]
+    "quotemark": [false],
+    "interface-name": false,
+    "ordered-imports": false,
+    "no-string-literal": false
   }
 }
