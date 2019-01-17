@@ -1,6 +1,6 @@
 workflow "Build and Deploy" {
   on = "push"
-  resolves = ["npm build"]
+  resolves = ["npm run build"]
 }
 
 action "npm install" {
@@ -8,14 +8,14 @@ action "npm install" {
   args = "install"
 }
 
-action "npm test" {
+action "npm run test" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "test"
+  runs = "run test"
   needs = ["npm install"]
 }
 
-action "npm build" {
+action "npm run build" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "build"
-  needs = ["npm test"]
+  runs = "run build"
+  needs = ["npm run test"]
 }
