@@ -1,21 +1,21 @@
 workflow "Build and Deploy" {
   on = "push"
-  resolves = ["GitHub Action for npm-2"]
+  resolves = ["npm build"]
 }
 
-action "GitHub Action for npm" {
+action "npm install" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
   args = "install"
 }
 
-action "GitHub Action for npm-1" {
+action "npm test" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  needs = ["GitHub Action for npm"]
   runs = "test"
+  needs = ["npm install"]
 }
 
-action "GitHub Action for npm-2" {
+action "npm build" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  needs = ["GitHub Action for npm-1"]
   runs = "build"
+  needs = ["npm test"]
 }
